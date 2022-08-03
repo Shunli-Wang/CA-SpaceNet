@@ -16,7 +16,16 @@ If this repository is helpful to you, please star it. If you find our work usefu
 }
 ```
 ## Dataset
-We provide two separate projects for CA-SpaceNet corresponding to the SPEED and Swisscube datasets.
+We provide two separate projects for CA-SpaceNet corresponding to the [SPEED](https://kelvins.esa.int/satellite-pose-estimation-challenge/data/) and [Swisscube](https://drive.google.com/file/d/1aALbqEQbTIDyhij7N4_je_LvhAqzVXm_/view?usp=sharing) datasets.
+
+**SwissCube**. The SwissCube dataset is a high fidelity dataset for 6D object pose estimation in space scenes. Accurate 3D meshes and physically-modeled astronomical objects are included in this dataset.
+It contains 500 scenes, of which each scene has 100 image sequences, resulting in 50K images in total.
+Consistent with SwissCube, 40K images are used for training, and the remaining 10K ones are used for testing.
+
+**SPEED**. *The Spacecraft Pose Estimation Dataset*(SPEED) was firstly released on the Kelvins Satellite Pose Estimation Challenge in 2019.
+It contains a large number of synthetic images and a small number of real satellite images.
+The ground-truth labels of the testing set are not available because the competition is not ongoing.
+Therefore, we divide the training set into two parts at random, 10K images for training and the remaining 2K ones for testing.
 
 ## Contact
 If you have any questions about our work, please contact slwang19@fudan.edu.cn or sbwang21@m.fudan.edu.cn.
