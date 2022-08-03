@@ -1,6 +1,6 @@
 
 ## CA-SpaceNet: Counterfactual Analysis for 6D Pose Estimation in Space
-This is an official pytorch implementation of our IROS 2022 paper **CA-SpaceNet: Counterfactual Analysis for 6D Pose Estimation in Space**. In this repository, we provide PyTorch code for training and testing our proposed CA-SpaceNet on the SwissCube dataset.
+This is an official pytorch implementation of the IROS 2022 paper **CA-SpaceNet: Counterfactual Analysis for 6D Pose Estimation in Space**. In this repository, we provide PyTorch code for training and testing the proposed CA-SpaceNet on the [Swisscube](https://github.com/cvlab-epfl/wide-depth-range-pose) and [SPEED](https://kelvins.esa.int/satellite-pose-estimation-challenge/data/) dataset.
 
 [[arXiv](https://arxiv.org/abs/2207.07869)]
 
@@ -8,15 +8,15 @@ This is an official pytorch implementation of our IROS 2022 paper **CA-SpaceNet:
 
 If this repository is helpful to you, please star it. If you find our work useful in your research, please consider citing:
 ```bash
-@article{wang2022spacenet,
+@article{CA-SpaceNet2022,
   title={CA-SpaceNet: Counterfactual Analysis for 6D Pose Estimation in Space},
   author={Wang, Shunli and Wang, Shuaibing and Jiao, Bo and Yang, Dingkang and Su, Liuzhen and Zhai, Peng and Chen, Chixiao and Zhang, Lihua},
-  journal={arXiv preprint arXiv:2207.07869},
+  journal={2022 IEEE/RSJ International Conference on Intelligent Robots and Systems},
   year={2022}
 }
 ```
 ## Dataset
-We provide two separate projects for CA-SpaceNet corresponding to the [SPEED](https://kelvins.esa.int/satellite-pose-estimation-challenge/data/) and [Swisscube](https://drive.google.com/file/d/1aALbqEQbTIDyhij7N4_je_LvhAqzVXm_/view?usp=sharing) datasets.
+We provide two separate projects for CA-SpaceNet corresponding to the [SPEED](https://kelvins.esa.int/satellite-pose-estimation-challenge/data/) and [Swisscube](https://github.com/cvlab-epfl/wide-depth-range-pose) datasets.
 
 **SwissCube**. The SwissCube dataset is a high fidelity dataset for 6D object pose estimation in space scenes. Accurate 3D meshes and physically-modeled astronomical objects are included in this dataset.
 It contains 500 scenes, of which each scene has 100 image sequences, resulting in 50K images in total.
