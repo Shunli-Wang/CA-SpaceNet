@@ -1,6 +1,6 @@
 
 ## CA-SpaceNet: Counterfactual Analysis for 6D Pose Estimation in Space
-This is an official pytorch implementation of our IROS 2022 paper **CA-SpaceNet: Counterfactual Analysis for 6D Pose Estimation in Space**. In this repository, we provide PyTorch code for training and testing our proposed CA-SpaceNet on the challenging SwissCube dataset.
+This is an official pytorch implementation of our IROS 2022 paper **CA-SpaceNet: Counterfactual Analysis for 6D Pose Estimation in Space**. In this repository, we provide PyTorch code for training and testing our proposed CA-SpaceNet on the SwissCube dataset.
 
 [[arXiv](https://arxiv.org/abs/2207.07869)]
 
