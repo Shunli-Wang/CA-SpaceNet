@@ -33,7 +33,7 @@ We provide CA-SpaceNet pretrained on the [SwissCube](https://drive.google.com/fi
 **1\. Clone this repository.**
 ```bash
 git clone https://github.com/Shunli-Wang/CA-SpaceNet.git ./CA-SpaceNet
-cd ./CA-SpaceNet
+cd ./CA-SpaceNet/CA-SpaceNet-on-Swisscube
 ```
 
 **2\. Create conda env.**
