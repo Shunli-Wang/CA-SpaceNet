@@ -36,7 +36,8 @@ We provide CA-SpaceNet and a replicated version of the WDR pretrained on the [SP
 **1\. Clone this repository.**
 ```bash
 git clone -b SPEED_pose https://github.com/Shunli-Wang/CA-SpaceNet.git ./CA-SpaceNet
-cd ./CA-SpaceNet
+cd ./CA-SpaceNet/CA-SpaceNet-on-SPEED
+
 ```
 
 **2\. Create conda env.**
