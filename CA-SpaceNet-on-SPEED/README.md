@@ -1,19 +1,5 @@
-## CA-SpaceNet: Counterfactual Analysis for 6D Pose Estimation in Space
+## CA-SpaceNet on the SPEED dataset
 This is an official pytorch implementation of our IROS 2022 paper **CA-SpaceNet: Counterfactual Analysis for 6D Pose Estimation in Space**. In this repository, we provide PyTorch code for training and testing our proposed CA-SpaceNet on the SPEED dataset.
-
-[[arXiv](https://arxiv.org/abs/2207.07869)]
-
-![image](https://user-images.githubusercontent.com/51118126/181905495-c813ab75-a2c7-46c5-a19a-0896f426ce82.png)
-
-If this repository is helpful to you, please star it. If you find our work useful in your research, please consider citing:
-```bash
-@article{wang2022spacenet,
-  title={CA-SpaceNet: Counterfactual Analysis for 6D Pose Estimation in Space},
-  author={Wang, Shunli and Wang, Shuaibing and Jiao, Bo and Yang, Dingkang and Su, Liuzhen and Zhai, Peng and Chen, Chixiao and Zhang, Lihua},
-  journal={arXiv preprint arXiv:2207.07869},
-  year={2022}
-}
-```
 
 ## Model Zoo
 We provide CA-SpaceNet and a replicated version of the WDR pretrained on the [SPEED](https://kelvins.esa.int/satellite-pose-estimation-challenge/data/) dataset. WDR_0.0400.pth is the weight obtained by training the WDR model on the SPEED dataset. CA-SpaceNet trained with WDR_0.0400.pth as the pre-training model, then achieves competitive results on the SPEED dataset.
@@ -35,13 +21,11 @@ We provide CA-SpaceNet and a replicated version of the WDR pretrained on the [SP
 
 **1\. Clone this repository.**
 ```bash
-git clone -b SPEED_pose https://github.com/Shunli-Wang/CA-SpaceNet.git ./CA-SpaceNet
+git clone https://github.com/Shunli-Wang/CA-SpaceNet.git ./CA-SpaceNet
 cd ./CA-SpaceNet/CA-SpaceNet-on-SPEED
-
 ```
 
 **2\. Create conda env.**
-
 ```bash
 conda create -n CA-SpaceNet python=3.9
 conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
@@ -76,6 +60,15 @@ sh ./test.sh
 **5\. Visualization**
 In order to better explore the performance of the model, this project provides visualization function. All prediction corners and 6D poses can be visualized by uncommenting the commands in `valid()` function of `train.py`.
 
+## Cite
+```
+@article{CA-SpaceNet2022,
+  title={CA-SpaceNet: Counterfactual Analysis for 6D Pose Estimation in Space},
+  author={Wang, Shunli and Wang, Shuaibing and Jiao, Bo and Yang, Dingkang and Su, Liuzhen and Zhai, Peng and Chen, Chixiao and Zhang, Lihua},
+  journal={2022 IEEE/RSJ International Conference on Intelligent Robots and Systems},
+  year={2022}
+}
+```
 
 ## Contact
 If you have any questions about our work, please contact slwang19@fudan.edu.cn or sbwang21@m.fudan.edu.cn.

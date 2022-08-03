@@ -1,23 +1,9 @@
 
-## CA-SpaceNet: Counterfactual Analysis for 6D Pose Estimation in Space
+## CA-SpaceNet on the SwissCube dataset
 This is an official pytorch implementation of our IROS 2022 paper **CA-SpaceNet: Counterfactual Analysis for 6D Pose Estimation in Space**. In this repository, we provide PyTorch code for training and testing our proposed CA-SpaceNet on the challenging SwissCube dataset.
 
-[[arXiv](https://arxiv.org/abs/2207.07869)]
-
-![image](https://user-images.githubusercontent.com/51118126/181905495-c813ab75-a2c7-46c5-a19a-0896f426ce82.png)
-
-If this repository is helpful to you, please star it. If you find our work useful in your research, please consider citing:
-```bash
-@article{wang2022spacenet,
-  title={CA-SpaceNet: Counterfactual Analysis for 6D Pose Estimation in Space},
-  author={Wang, Shunli and Wang, Shuaibing and Jiao, Bo and Yang, Dingkang and Su, Liuzhen and Zhai, Peng and Chen, Chixiao and Zhang, Lihua},
-  journal={arXiv preprint arXiv:2207.07869},
-  year={2022}
-}
-```
-
 ## Model Zoo
-We provide CA-SpaceNet pretrained on the [SwissCube](https://drive.google.com/file/d/1aALbqEQbTIDyhij7N4_je_LvhAqzVXm_/view?usp=sharing) dataset. WDR_78.78.pth is the weight obtained by training the WDR model on the Swisscube dataset. CA-SpaceNet trained with WDR_78.78.pth as the pre-training model, then outperforms state-of-the-arts on the challenging SwissCube dataset.
+We provide CA-SpaceNet pretrained on the [SwissCube](https://github.com/cvlab-epfl/wide-depth-range-pose) dataset. WDR_78.78.pth is the weight obtained by training the WDR model on the Swisscube dataset. CA-SpaceNet trained with WDR_78.78.pth as the pre-training model, then outperforms state-of-the-arts on the challenging SwissCube dataset.
 <table>
   <tr><td>name</td><td>dataset</td><td>near</td><td>medium</td><td>far</td><td>all</td><td align="center">url</td></tr>
    <tr><td>WDR</td><td>Swisscube</td><td>92.37</td><td>84.16</td><td>61.27</td><td>78.78</td>
@@ -45,7 +31,7 @@ pip install -r requirements.txt
 
 **3\. Download the Dataset & Create a soft link.**
 
- Download the [SwissCube](https://drive.google.com/file/d/1aALbqEQbTIDyhij7N4_je_LvhAqzVXm_/view?usp=sharing) dataset and put it in `/PATH/TO/SwissCube_1.0`. Then create a soft link to this dataset. Note that the name of the dataset `SwissCube_1.0` is erased here.
+ Download the [SwissCube](https://github.com/cvlab-epfl/wide-depth-range-pose) dataset and put it in `/PATH/TO/SwissCube_1.0`. Then create a soft link to this dataset. Note that the name of the dataset `SwissCube_1.0` is erased here.
 ```bash
 ln -s /PATH/TO ./data
 ```
@@ -71,6 +57,15 @@ sh ./test.sh
 **5\. Visualization**
 In order to better explore the performance of the model, this project provides visualization function. All prediction corners and 6D poses can be visualized by uncommenting the commands in `valid()` function of `train.py`.
 
+## Cite
+```
+@article{CA-SpaceNet2022,
+  title={CA-SpaceNet: Counterfactual Analysis for 6D Pose Estimation in Space},
+  author={Wang, Shunli and Wang, Shuaibing and Jiao, Bo and Yang, Dingkang and Su, Liuzhen and Zhai, Peng and Chen, Chixiao and Zhang, Lihua},
+  journal={2022 IEEE/RSJ International Conference on Intelligent Robots and Systems},
+  year={2022}
+}
+```
 
 ## Contact
 If you have any questions about our work, please contact slwang19@fudan.edu.cn or sbwang21@m.fudan.edu.cn.
