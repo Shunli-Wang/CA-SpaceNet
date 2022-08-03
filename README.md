@@ -18,12 +18,12 @@ If this repository is helpful to you, please star it. If you find our work usefu
 ## Repository Architecture
 In this repository, we provide two separate folders to store two sets of codes on the [Swisscube](https://github.com/cvlab-epfl/wide-depth-range-pose) dataset and the [SPEED](https://kelvins.esa.int/satellite-pose-estimation-challenge/data/) dataset, respectively.
 
-- **./CA-SpaceNet-on-Swisscube/**: This folder contains all codes of the proposed CA-SpaceNet on the [Swisscube](https://github.com/cvlab-epfl/wide-depth-range-pose) dataset and pre-trained models. Please refer to [here](./CA-SpaceNet-on-Swisscube/README.md) for more details.
+- **./CA-SpaceNet-on-Swisscube/**: This folder contains all codes of the proposed CA-SpaceNet on the [Swisscube](https://github.com/cvlab-epfl/wide-depth-range-pose) dataset and pre-trained models. Please refer to [Swisscube_README](./CA-SpaceNet-on-Swisscube/README.md) for more details.
 
-- **./CA-SpaceNet-on-SPEED/**: This folder contains all codes of the proposed CA-SpaceNet on the [SPEED](https://kelvins.esa.int/satellite-pose-estimation-challenge/data/) dataset and pre-trained models. Please refer to [here](./CA-SpaceNet-on-SPEED/README.md) for more details.
+- **./CA-SpaceNet-on-SPEED/**: This folder contains all codes of the proposed CA-SpaceNet on the [SPEED](https://kelvins.esa.int/satellite-pose-estimation-challenge/data/) dataset and pre-trained models. Please refer to [SPEED_README](./CA-SpaceNet-on-SPEED/README.md) for more details.
 
-## Contact
-
+## Acknowledgements
+Some of the code is borrowed from the [Swisscube](https://github.com/cvlab-epfl/wide-depth-range-pose) project. We are very grateful for their wonderful implementation. 
 
 ## Contact
 If you have any questions about our work, please contact slwang19@fudan.edu.cn or sbwang21@m.fudan.edu.cn.
