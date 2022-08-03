@@ -16,7 +16,7 @@ If this repository is helpful to you, please star it. If you find our work usefu
 }
 ```
 ## Dataset
-
+We provide two separate projects for CA-SpaceNet corresponding to the SPEED and Swisscube datasets.
 
 ## Contact
 If you have any questions about our work, please contact slwang19@fudan.edu.cn or sbwang21@m.fudan.edu.cn.
