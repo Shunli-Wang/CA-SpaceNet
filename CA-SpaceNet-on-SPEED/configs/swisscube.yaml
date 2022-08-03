@@ -1,0 +1,58 @@
+MODEL:
+  BACKBONE: 'darknet53'
+  ANCHOR_SIZES: [32, 64, 128, 256, 480]
+  ANCHOR_STRIDES: [8, 16, 32, 64, 120]
+DATASETS:
+  TRAIN: './data/SPEED/split/trainf1.txt'
+  TRAIN_ANN: './data/SPEED/train.json'
+  VALID: './data/SPEED/split/validf1.txt'
+  VALID_ANN: './data/SPEED/train.json'
+  # TEST: './data/SPEED/testing.txt'
+  # TEST_ANN: './data/SPEED/test.json'
+  BBOX_FILE: './data/SPEED/boxes.json'
+  MESH_DIAMETERS: [0.75397104] # [128664.0] # [0.75397104] # 125
+  N_CLASS: 2
+INPUT:
+  INTERNAL_WIDTH: 960
+  INTERNAL_HEIGHT: 960
+  INTERNAL_K: [1501.70648464164, 0.0, 480.0, 0.0, 1501.70648464164, 480.0, 0.0, 0.0, 1.0]  # SPEED 
+SOLVER:
+  IMS_PER_BATCH: 8
+  # 100轮次从头
+  # BASE_LR: 0.01
+  # STEPS_PER_EPOCH: 1250
+  # MAX_ITER: 125000
+  # SCHEDULER_POLICY: 'multi_steps'
+  # SCHEDULER_PARAMS: {'steps': [83333, 112500], 'gamma': 0.1}
+  
+  # 80次从头
+  # BASE_LR: 0.01
+  # STEPS_PER_EPOCH: 1250
+  # MAX_ITER: 100000
+  # SCHEDULER_POLICY: 'multi_steps'
+  # SCHEDULER_PARAMS: {'steps': [50000, 75000], 'gamma': 0.1}
+
+  # 50轮次续训
+  # BASE_LR: 0.01
+  # STEPS_PER_EPOCH: 1250
+  # MAX_ITER: 62500
+  # SCHEDULER_POLICY: 'multi_steps'
+  # SCHEDULER_PARAMS: {'steps': [41666, 56250], 'gamma': 0.1}
+
+  # 30次续训
+  BASE_LR: 0.001
+  STEPS_PER_EPOCH: 1250
+  MAX_ITER: 37500
+  SCHEDULER_POLICY: 'multi_steps'
+  SCHEDULER_PARAMS: {'steps': [25000, 31250], 'gamma': 0.1}
+  
+  # 
+  LOSS_WEIGHT_CLS: 0.01
+  LOSS_WEIGHT_REG: 0.1
+  POSITIVE_LAMBDA: 1.0
+  AUGMENTATION_SHIFT: 0.1
+  AUGMENTATION_SCALE: 0.1
+  AUGMENTATION_ROTATION: 180
+TEST:
+  IMS_PER_BATCH: 1
+  CONFIDENCE_TH: 0.3
