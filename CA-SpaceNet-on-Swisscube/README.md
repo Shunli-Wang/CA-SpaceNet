@@ -4,14 +4,13 @@ This is an official pytorch implementation of our IROS 2022 paper **CA-SpaceNet:
 
 ## Model Zoo
 We provide CA-SpaceNet pretrained on the [SwissCube](https://github.com/cvlab-epfl/wide-depth-range-pose) dataset. WDR_78.78.pth is the weight obtained by training the WDR model on the Swisscube dataset. CA-SpaceNet trained with WDR_78.78.pth as the pre-training model, then outperforms state-of-the-arts on the challenging SwissCube dataset.
-<!-- 这个地方表头首字母大写，加粗居中。 -->
 
 <table>
-  <tr><td>name</td><td>dataset</td><td>near</td><td>medium</td><td>far</td><td>all</td><td align="center">url</td></tr>
-   <tr><td>WDR</td><td>Swisscube</td><td>92.37</td><td>84.16</td><td>61.27</td><td>78.78</td>
+  <tr align="center"><td><b>Name</b></td><td><b>Dataset</b></td><td><b>Near</b></td><td><b>Medium</b></td><td><b>Far</b></td><td><b>All</b></td><td><b>Url</b></td></tr>
+   <tr align="center"><td>WDR</td><td>Swisscube</td><td>92.37</td><td>84.16</td><td>61.27</td><td>78.78</td>
     <td><a href='https://pan.baidu.com/s/1_altEartEv2DXXbkW62h6Q'>BaiduNetDisk</a> [0am6] or <a href='https://drive.google.com/file/d/1QyRlulJ9u8WZgD7b3l7uNpw4bSf2PeYe/view?usp=sharing'>Google Drive</a></td>
   </tr>
-  <tr><td>CA-SpaceNet</td><td>Swisscube</td><td>91.01</td><td>86.32</td><td>61.72</td><td>79.39</td>
+  <tr align="center"><td>CA-SpaceNet</td><td>Swisscube</td><td>91.01</td><td>86.32</td><td>61.72</td><td>79.39</td>
     <td><a href='https://pan.baidu.com/s/1fZq9dxhKrJ5JgIlfip5kfQ'>BaiduNetDisk</a> [cwhi] or <a href='https://drive.google.com/file/d/1g3dEHI0GprakUe5jZk_GDoo2ukiGJRgb/view?usp=sharing'>Google Drive</a></td>
   </tr>
 </table>
@@ -44,18 +43,27 @@ mv darknet53-0564-b36bef6b.pth ~/.torch/model/
 ```
 
 **4\. Training & Testing**
-<!-- 这里需要添加上一些说明：如果用户想基于7878预训练模型进行CA-SpaceNet模型的训练，则需要先下载好WDR模型，放到特定的位置，然后再运行这个sh文件 -->
-Run the train.sh file:
+Start training directly without loading pre-training weight:
 ```bash
-sh ./train.sh
+CUDA_VISIBLE_DEVICES=0 python3 train.py
+```
+Or loading pre-trained model weight for training, like the following:
+```bash
+1. download the WDR_78.78.pth file to the 'working_dirs' folder.
+2. CUDA_VISIBLE_DEVICES=0 python3 train.py --weight_file ./working_dirs/WDR_78.78.pth
 ```
 
 <!-- 测试有两种方法，一种是用户自己训练出一个CA-SpaceNet模型，则需要进行命令行修改，再运行sh文件；另一种是直接下载预训练模型，同样也是修改命令行再运行。 -->
 After finishing the training phase, an experiment file will be created under `./working_dirs/swisscube`. For example, '20220311_123010'.
 
-Modify the instruction in `test.sh`. Use this experiment number to replace the number in the original command. Then run the test.sh file:
+Modify the weight path specified by the following command. Use this experiment number to replace the number in the original command. Then run the following command:
 ```bash
-sh ./test.sh
+CUDA_VISIBLE_DEVICES=0 python3 test.py --weight_file 'working_dirs/swisscube/20211230_180655/final.pth'
+```
+Or you can simply download our weight to start testing, like the following:
+```
+1. download the CA_79.39.pth file to the 'working_dirs' folder.
+2. CUDA_VISIBLE_DEVICES=0 python3 test.py --weight_file 'working_dirs/CA_79.39.pth'
 ```
 
 **5\. Visualization**
