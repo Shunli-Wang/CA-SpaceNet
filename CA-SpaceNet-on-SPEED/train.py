@@ -473,7 +473,7 @@ if __name__ == '__main__':
     
     #### Training
     for epoch in range(start_epoch, max_epoch):
-        # train(cfg, epoch, max_epoch, train_loader, model, model_c, optimizer, scheduler_batch, device, logger=logger)
+        train(cfg, epoch, max_epoch, train_loader, model, model_c, optimizer, scheduler_batch, device, logger=logger)
 
         valid(cfg, epoch, valid_loader, model, device, logger=logger)
 
