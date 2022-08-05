@@ -45,6 +45,7 @@ mv darknet53-0564-b36bef6b.pth ~/.torch/model/
 **4\. Training & Testing**
 
 Training CA-SpaceNet requires loading the pre-training weight of the WDR model.
+
 (1) If you want to train a CA-SpaceNet model, like the following:
 ```bash
 1. download the WDR_78.78.pth file to the 'working_dirs' folder.
