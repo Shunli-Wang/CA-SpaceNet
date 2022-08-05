@@ -49,13 +49,13 @@ Training CA-SpaceNet requires loading the pre-training weight of the WDR model.
 #### Training
 (1) If you want to train a CA-SpaceNet model, like the following:
 ```bash
-1. download the WDR_78.78.pth file to the 'working_dirs' folder.
-2. CUDA_VISIBLE_DEVICES=0 python3 train.py --weight_file ./working_dirs/WDR_78.78.pth
+# download the WDR_78.78.pth file to the 'working_dirs' folder.
+CUDA_VISIBLE_DEVICES=0 python3 train.py --weight_file ./working_dirs/WDR_78.78.pth
 ```
 (2) If you want to train a CA-SpaceNet model from scratch, like the following:
 ```bash
-1. CUDA_VISIBLE_DEVICES=0 python3 train_WDR.py
-2. CUDA_VISIBLE_DEVICES=0 python3 train.py --weight_file ./working_dirs/WDR.pth # './working_dirs/WDR.pth' is the weight obtained by executing train_WDR.py.
+CUDA_VISIBLE_DEVICES=0 python3 train_WDR.py
+CUDA_VISIBLE_DEVICES=0 python3 train.py --weight_file ./working_dirs/WDR.pth # './working_dirs/WDR.pth' is the weight obtained by executing train_WDR.py.
 ```
 #### Testing
 
