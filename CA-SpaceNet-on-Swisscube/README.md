@@ -59,7 +59,7 @@ Training CA-SpaceNet requires loading the pre-training weight of the WDR model.
 ```
 #### Testing
 
-(1)After finishing the training phase, an experiment file will be created under `./working_dirs/swisscube`. For example, '20220311_123010'.
+(1) After finishing the training phase, an experiment file will be created under `./working_dirs/swisscube`. For example, '20220311_123010'.
 
 Modify the weight path specified by the following command. Use this experiment number to replace the number in the original command. Then run the following command:
 ```bash
