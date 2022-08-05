@@ -3,19 +3,16 @@ This is an official pytorch implementation of our IROS 2022 paper **CA-SpaceNet:
 
 ## Model Zoo
 We provide CA-SpaceNet and a replicated version of the WDR pretrained on the [SPEED](https://kelvins.esa.int/satellite-pose-estimation-challenge/data/) dataset. WDR_0.0400.pth is the weight obtained by training the WDR model on the SPEED dataset. CA-SpaceNet trained with WDR_0.0400.pth as the pre-training model, then achieves competitive results on the SPEED dataset.
-<div class="center">
+
 <table>
-  <tr><td>name</td><td>dataset</td><td>S_R_m</td><td>S_t_m</td><td>S_total_m</td><td align="center">url</td></tr>
- 
-  <tr><td>WDR</td><td>SPEED</td><td>0.029241</td><td>0.010777</td><td>0.040018</td>
+    <tr align="center"><td><b>Name</b></td><td><b>Dataset</b></td><td><b>S_R_m</b></td><td><b>S_t_m</b></td><td><b>S_total_m</b></td><td><b>Url</b></td></tr> 
+  <tr align="center"><td>WDR</td><td>SPEED</td><td>0.029241</td><td>0.010777</td><td>0.040018</td>
     <td><a href='https://pan.baidu.com/s/1eOK3D6D_tlGFQe6w0sh2fA'>BaiduNetDisk</a> [nxcx] or <a href='https://drive.google.com/file/d/1FXPuPOwyxbxomPo9mmjVIluEtrjjSoh1/view?usp=sharing'>Google Drive</a></td>
   </tr>
-  
-   <tr><td>CA-SpaceNet</td><td>SPEED</td><td>0.029006</td><td>0.009446</td><td>0.038451</td>
+   <tr align="center"><td>CA-SpaceNet</td><td>SPEED</td><td>0.029006</td><td>0.009446</td><td>0.038451</td>
     <td><a href='https://pan.baidu.com/s/1JGLieEqzww1T4uinp2EkRA'>BaiduNetDisk</a> [pqtl] or <a href='https://drive.google.com/file/d/1_8OgWWRDsbSz3QDnhlez7mycWQgz5gHo/view?usp=sharing'>Google Drive</a></td>
   </tr>
 </table>
-</div>
 
 ## User Guide
 
@@ -46,15 +43,25 @@ mv darknet53-0564-b36bef6b.pth ~/.torch/model/
 
 **4\. Training & Testing**
 
-Run the train.sh file:
+Start training directly without loading pre-training weight:
 ```bash
-sh ./train.sh
+CUDA_VISIBLE_DEVICES=0 python3 train.py
+```
+Or loading pre-trained model weight for training, like the following:
+```bash
+1. download the WDR_0.0400.pth file to the 'working_dirs' folder.
+2. CUDA_VISIBLE_DEVICES=0 python3 train.py --weight_file ./working_dirs/WDR_0.0400.pth
 ```
 After finishing the training phase, an experiment file will be created under `./working_dirs/swisscube`. For example, '20220311_123010'.
 
-Modify the instruction in `test.sh`. Use this experiment number to replace the number in the original command. Then run the test.sh file:
+Modify the weight path specified by the following command. Use this experiment number to replace the number in the original command. Then run the following command:
 ```bash
-sh ./test.sh
+CUDA_VISIBLE_DEVICES=0 python3 test.py --weight_file 'working_dirs/swisscube/20211230_180655/final.pth'
+```
+Or you can simply download our weight to start testing, like the following:
+```
+1. download the CA_0.0385.pth file to the 'working_dirs' folder.
+2. CUDA_VISIBLE_DEVICES=0 python3 test.py --weight_file 'working_dirs/CA_0.0385.pth'
 ```
 
 **5\. Visualization**
