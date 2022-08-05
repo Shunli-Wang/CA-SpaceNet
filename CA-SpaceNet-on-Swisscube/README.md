@@ -43,6 +43,7 @@ mv darknet53-0564-b36bef6b.pth ~/.torch/model/
 ```
 
 **4\. Training & Testing**
+
 Start training directly without loading pre-training weight:
 ```bash
 CUDA_VISIBLE_DEVICES=0 python3 train.py
@@ -53,7 +54,6 @@ Or loading pre-trained model weight for training, like the following:
 2. CUDA_VISIBLE_DEVICES=0 python3 train.py --weight_file ./working_dirs/WDR_78.78.pth
 ```
 
-<!-- 测试有两种方法，一种是用户自己训练出一个CA-SpaceNet模型，则需要进行命令行修改，再运行sh文件；另一种是直接下载预训练模型，同样也是修改命令行再运行。 -->
 After finishing the training phase, an experiment file will be created under `./working_dirs/swisscube`. For example, '20220311_123010'.
 
 Modify the weight path specified by the following command. Use this experiment number to replace the number in the original command. Then run the following command:
