@@ -82,7 +82,7 @@ def valid(cfg, epoch, loader, model, device, logger=None):
         images = images.to(device)
         targets = [target.to(device) for target in targets]
 
-        pred, xy2d_nps = model(images, [], targets=targets)
+        pred, xy2d_nps, _ = model(images, targets=targets)
 
         # Draw all images.
         # if get_rank() == 0:  # and idx % 10 == 0
@@ -403,7 +403,7 @@ if __name__ == '__main__':
 
     #### Freezing parameters
     for i, p in enumerate(model.backbone.parameters()):  # Retraining FPN and Head modules of the PoseModule_Casual (counterfactual path of the CA-SpaceNet)
-        p.requires_grad = False
+        p.requires_grad = True
 
     #### Create optimizer
     optimizer, scheduler_batch = optimizer_create(cfg)
