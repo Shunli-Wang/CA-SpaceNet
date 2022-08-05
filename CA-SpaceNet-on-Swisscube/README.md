@@ -45,23 +45,22 @@ mv darknet53-0564-b36bef6b.pth ~/.torch/model/
 **4\. Training & Testing**
 
 Training CA-SpaceNet requires loading the pre-training weight of the WDR model.
-1) If you want to train a CA-SpaceNet model, like the following:
+(1) If you want to train a CA-SpaceNet model, like the following:
 ```bash
 1. download the WDR_78.78.pth file to the 'working_dirs' folder.
 2. CUDA_VISIBLE_DEVICES=0 python3 train.py --weight_file ./working_dirs/WDR_78.78.pth
 ```
-2) If you want to train a CA-SpaceNet model from scratch, like the following:
+(2) If you want to train a CA-SpaceNet model from scratch, like the following:
 ```bash
 1. CUDA_VISIBLE_DEVICES=0 python3 train_WDR.py
 2. CUDA_VISIBLE_DEVICES=0 python3 train.py --weight_file ./working_dirs/WDR.pth # './working_dirs/WDR.pth' is the weight obtained by executing train_WDR.py.
 ```
 After finishing the training phase, an experiment file will be created under `./working_dirs/swisscube`. For example, '20220311_123010'.
-
 Modify the weight path specified by the following command. Use this experiment number to replace the number in the original command. Then run the following command:
 ```bash
 CUDA_VISIBLE_DEVICES=0 python3 test.py --weight_file 'working_dirs/swisscube/20211230_180655/final.pth'
 ```
-3) Or you can simply download our weight to start testing, like the following:
+(3) Or you can simply download our weight to start testing, like the following:
 ```
 1. download the CA_79.39.pth file to the 'working_dirs' folder.
 2. CUDA_VISIBLE_DEVICES=0 python3 test.py --weight_file 'working_dirs/CA_79.39.pth'
