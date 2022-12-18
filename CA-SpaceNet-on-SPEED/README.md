@@ -26,7 +26,6 @@ cd ./CA-SpaceNet/CA-SpaceNet-on-SPEED
 ```bash
 conda create -n CA-SpaceNet python=3.9
 conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
-pip install -r requirements.txt
 ```
 
 **3\. Download the Dataset & Create a soft link.**
