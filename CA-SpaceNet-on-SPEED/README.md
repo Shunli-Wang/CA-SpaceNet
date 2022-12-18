@@ -35,7 +35,7 @@ conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 ln -s /PATH/TO ./data
 ```
 
-In addition, additional data for the SPEED dataset needs to be downloaded from <a href='https://pan.baidu.com/s/1i8I_JHqIukb_2v-EtZp5dQ'>BaiduNetDisk</a> [e20g]
+In addition, supplementary data for the SPEED dataset needs to be downloaded from <a href='https://pan.baidu.com/s/1i8I_JHqIukb_2v-EtZp5dQ'>BaiduNetDisk</a> [e20g].
 
 The final data directory format is as follows:
 ```bash
