@@ -34,8 +34,9 @@ conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 ```bash
 ln -s /PATH/TO ./data
 ```
-The downloading produce of pre-trained weights of DarkNet maybe extremely slow. So we'd better download the pth file manually and put it to predetermined location. In this way, the program will skip the automatic download process. 
+
 In addition, additional data for the SPEED dataset needs to be downloaded from <a href='https://pan.baidu.com/s/1i8I_JHqIukb_2v-EtZp5dQ'>BaiduNetDisk</a> [e20g]
+
 The final data directory format is as follows:
 ```bash
 ├── boxes.json
@@ -66,6 +67,8 @@ The final data directory format is as follows:
 ├── training.txt
 └── train.json
 ```
+
+The downloading produce of pre-trained weights of DarkNet maybe extremely slow. So we'd better download the pth file manually and put it to predetermined location. In this way, the program will skip the automatic download process. 
 
 ```bash
 unzip darknet53-0564-b36bef6b.pth.zip && rm darknet53-0564-b36bef6b.pth.zip
