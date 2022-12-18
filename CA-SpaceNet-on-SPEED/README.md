@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 **3\. Download the Dataset & Create a soft link.**
 
- Download the `SPEED dataset`[1] and put it in `/PATH/TO/SPEED`. Then create a soft link to this dataset. Note that the name of the dataset `SPEED` is erased here.
+ Download the [SPEED dataset](https://kelvins.esa.int/satellite-pose-estimation-challenge/data/) [1] and put it in `/PATH/TO/SPEED`. Then create a soft link to this dataset. Note that the name of the dataset `SPEED` is erased here.
 ```bash
 ln -s /PATH/TO ./data
 ```
